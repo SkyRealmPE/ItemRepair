@@ -1,0 +1,18 @@
+name: ItemRepair
+author: Driesboy
+api: 3.0.0-ALPHA11
+description: A plugin to repair items.
+version: 1.0
+main: ItemRepair\Main
+commands:
+    repair:
+        description: Checks a list of timed ranks command.
+        permission: repair.use
+permissions:
+  repair.use:
+      default: false
+      children:
+          repair.all:
+          default: false
+          repair.hand:
+          default: false
