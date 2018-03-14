@@ -43,7 +43,6 @@ class Main extends PluginBase implements Listener
                                 return true;
                             }
                             $sender->sendMessage(TextFormat::GREEN . "You have repaired everything in your inventory.");
-
                         }
                     }
                 }
@@ -51,6 +50,7 @@ class Main extends PluginBase implements Listener
                     if ($sender->hasPermission("repair.hand")) {
                         if ($sender instanceof Player) {
                             $sender->getInventory()->getItemInHand()->setDamage(0);
+                            $sender->sendMessage(TextFormat::GREEN . "You have repaired the item in your hand.");
                         }
                     }
                     return true;
