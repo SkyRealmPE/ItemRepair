@@ -11,16 +11,16 @@ use pocketmine\utils\TextFormat;
 
 class Main extends PluginBase implements Listener
 {
-
+$prefix = "§8[§e§lRepair§r§8]§c";
     public function onEnable()
     {
-        $this->getLogger()->info("§bItem Repair enabled!");
+        $this->getLogger()->info("SkyRealms Item Repair Plugin enabled!");
     }
 
 
     public function onDisable()
     {
-        $this->getLogger()->info("§bItem Repair disabled!");
+        $this->getLogger()->info("SkyRealms Item Repair Plugin disabled!");
     }
 
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool
@@ -28,7 +28,7 @@ class Main extends PluginBase implements Listener
         if (strtolower($command->getName()) == "repair") {
             if ($sender->hasPermission("repair.use")) {
                 if (!isset($args[0])) {
-                    $sender->sendMessage(TextFormat::GOLD . "Please use /repair all|hand");
+                    $sender->sendMessage("$prefix Please use §d/repair §ahand §cor §d/repair §aall");
                     return true;
                 }
                 if ($args[0] == "all") {
@@ -42,7 +42,7 @@ class Main extends PluginBase implements Listener
                                 $item->setDamage(0);
                                 return true;
                             }
-                            $sender->sendMessage(TextFormat::GREEN . "You have repaired everything in your inventory.");
+                            $sender->sendMessage(TextFormat::GREEN . "$prefix §aayou have repaired everything in your inventory.");
                         }
                     }
                 }
@@ -50,7 +50,7 @@ class Main extends PluginBase implements Listener
                     if ($sender->hasPermission("repair.hand")) {
                         if ($sender instanceof Player) {
                             $sender->getInventory()->getItemInHand()->setDamage(0);
-                            $sender->sendMessage(TextFormat::GREEN . "You have repaired the item in your hand.");
+                            $sender->sendMessage(TextFormat::GREEN . "$prefix you have repaired the item in your hand.");
                         }
                     }
                     return true;
