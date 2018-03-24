@@ -6,7 +6,7 @@ version: 1.0
 main: ItemRepair\Main
 commands:
     repair:
-        description: §dconate for a rank to use this command
+        description: §ddonate for a rank to use this command
         permission: repair.use
 permissions:
   repair.use:
