@@ -1,12 +1,12 @@
 name: ItemRepair
-author: Driesboy
+author: Crafter20162017
 api: 3.0.0-ALPHA11
 description: A plugin to repair items.
 version: 1.0
 main: ItemRepair\Main
 commands:
     repair:
-        description: Checks a list of timed ranks command.
+        description: §dconate for a rank to use this command
         permission: repair.use
 permissions:
   repair.use:
